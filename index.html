@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unilever Global | Unilever</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(0,100,200,0.8) 0%, rgba(0,150,255,0.6) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+        .unilever-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: white;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white">
+    
+    <!-- HEADER -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-3">
+                <!-- Logo -->
+                <div class="flex items-center space-x-8">
+                    <a href="#" class="flex items-center">
+                        <div class="unilever-logo">Unilever</div>
+                    </a>
+                    
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden lg:flex space-x-6 text-sm">
+                        <div class="relative dropdown group">
+                            <button class="hover:text-blue-300 flex items-center transition duration-300">
+                                Our company
+                                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu absolute hidden group-hover:block left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md py-2">
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">At a glance</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Our leadership</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Innovation and R&D</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">History & Archives</a>
+                            </div>
+                        </div>
+                        
+                        <div class="relative dropdown group">
+                            <button class="hover:text-blue-300 flex items-center transition duration-300">
+                                News
+                                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu absolute hidden group-hover:block left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md py-2">
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">All news stories</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Press and media</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Sign up for alerts</a>
+                            </div>
+                        </div>
+                        
+                        <div class="relative dropdown group">
+                            <button class="hover:text-blue-300 flex items-center transition duration-300">
+                                Brands
+                                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu absolute hidden group-hover:block left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md py-2">
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Beauty & Wellbeing</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Personal Care</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Home Care</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Foods</a>
+                            </div>
+                        </div>
+                        
+                        <div class="relative dropdown group">
+                            <button class="hover:text-blue-300 flex items-center transition duration-300">
+                                Sustainability
+                                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu absolute hidden group-hover:block left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md py-2">
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Climate</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Nature</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Plastics</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Livelihoods</a>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="hover:text-blue-300 transition duration-300">Careers</a>
+                        
+                        <div class="relative dropdown group">
+                            <button class="hover:text-blue-300 flex items-center transition duration-300">
+                                Investors
+                                <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu absolute hidden group-hover:block left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md py-2">
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Why invest</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Results and events</a>
+                                <a href="#" class="block px-4 py-2 text-sm hover:bg-blue-50 transition">Annual Report</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                
+                <!-- Right Menu -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button class="hover:text-blue-300 transition duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                    <button class="hover:text-blue-300 transition duration-300 text-sm">🌎 Global</button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden hover:text-blue-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#" class="hover:text-blue-300 py-2">Our company</a>
+                    <a href="#" class="hover:text-blue-300 py-2">News</a>
+                    <a href="#" class="hover:text-blue-300 py-2">Brands</a>
+                    <a href="#" class="hover:text-blue-300 py-2">Sustainability</a>
+                    <a href="#" class="hover:text-blue-300 py-2">Careers</a>
+                    <a href="#" class="hover:text-blue-300 py-2">Investors</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500">
+        <div class="absolute inset-0 opacity-30">
+        </div>
+        
+        <section class="container mx-auto my-8">
+        <video autoplay muted loop playsinline class="w-full">
+          <source src="Unilever vid1.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </section>
+
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fadeIn">Welcome to Unilever</h1>
+            <p class="text-xl md:text-2xl lg:text-3xl mb-8 animate-fadeIn font-light">
+                The world's best known brands<br>creating Unilever at Scale
+            </p>
+            <button onclick="document.getElementById('brands-section').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-10 py-4 rounded-full transition duration-300 transform hover:scale-105 shadow-xl animate-fadeIn">
+                Explore Our Brands
+            </button>
+        </div>
+    </section>
+
+    <!-- LINK SECTION -->
+    <section class="bg-blue-600 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://fti.unai.edu" target="_blank" 
+                   class="inline-flex items-center px-6 py-3 bg-white hover:bg-blue-50 text-blue-600 font-semibold rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                    FTI UNAI
+                </a>
+                <a href="https://www.unai.edu" target="_blank" 
+                   class="inline-flex items-center px-6 py-3 bg-white hover:bg-blue-50 text-blue-600 font-semibold rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                    </svg>
+                    UNAI Website
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section id="brands-section" class="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">Explore our categories</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Discover our diverse range of products across multiple categories
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
+                <!-- Category Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 cursor-pointer card-hover">
+                    <div class="relative h-48 bg-gradient-to-br from-pink-400 to-red-400">
+                        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400&h=400&fit=crop" 
+                             alt="Beauty & Wellbeing" 
+                             class="w-full h-full object-cover opacity-80">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Beauty & Wellbeing</h3>
+                        <p class="text-sm text-gray-600 mb-3">Premium beauty and personal care products</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Learn more →</a>
+                    </div>
+                </div>
+                
+                <!-- Category Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 cursor-pointer card-hover">
+                    <div class="relative h-48 bg-gradient-to-br from-blue-400 to-cyan-400">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop" 
+                             alt="Personal Care" 
+                             class="w-full h-full object-cover opacity-80">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Personal Care</h3>
+                        <p class="text-sm text-gray-600 mb-3">Daily essentials for personal hygiene</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Learn more →</a>
+                    </div>
+                </div>
+                
+                <!-- Category Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 cursor-pointer card-hover">
+                    <div class="relative h-48 bg-gradient-to-br from-green-400 to-teal-400">
+                        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=400&h=400&fit=crop" 
+                             alt="Home Care" 
+                             class="w-full h-full object-cover opacity-80">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Home Care</h3>
+                        <p class="text-sm text-gray-600 mb-3">Cleaning and household products</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Learn more →</a>
+                    </div>
+                </div>
+                
+                <!-- Category Card 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 cursor-pointer card-hover">
+                    <div class="relative h-48 bg-gradient-to-br from-yellow-400 to-orange-400">
+                        <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=400&h=400&fit=crop" 
+                             alt="Foods" 
+                             class="w-full h-full object-cover opacity-80">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Foods</h3>
+                        <p class="text-sm text-gray-600 mb-3">Delicious and nutritious food brands</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 font-semibold text-sm">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND LOGOS SECTION -->
+    <section class="bg-blue-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+                <div class="text-white font-bold text-2xl">Dove</div>
+                <div class="text-white font-bold text-2xl">Knorr</div>
+                <div class="text-white font-bold text-2xl">Surf</div>
+                <div class="text-white font-bold text-2xl">Axe</div>
+                <div class="text-white font-bold text-2xl">Omo</div>
+                <div class="text-white font-bold text-2xl">Lux</div>
+                <div class="text-white font-bold text-2xl">Rexona</div>
+                <div class="text-white font-bold text-2xl">Lifebuoy</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS SECTION -->
+    <section class="py-16 bg-gradient-to-b from-white to-blue-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Latest news stories</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl">Stay updated with our latest innovations and initiatives</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- News Card 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 cursor-pointer card-hover" onclick="openModal('modal1')">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&h=400&fit=crop" 
+                             alt="Lux Product" 
+                             class="w-full h-56 object-cover">
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            News article
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 hover:text-blue-600 transition duration-300 mb-2">
+                            Science, sensorials and the skinification trend sparking growth for Lux
+                        </h3>
+                        <p class="text-gray-600 text-sm">Discover how Lux is leveraging innovation to drive growth</p>
+                    </div>
+                </div>
+                
+                <!-- News Card 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 cursor-pointer card-hover" onclick="openModal('modal2')">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" 
+                             alt="AI Tools" 
+                             class="w-full h-56 object-cover">
+                        <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            News article
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 hover:text-blue-600 transition duration-300 mb-2">
+                            How AI and digital tools are empowering women micro-entrepreneurs
+                        </h3>
+                        <p class="text-gray-600 text-sm">Technology enabling economic empowerment</p>
+                    </div>
+                </div>
+
+                <!-- News Card 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 cursor-pointer card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop" 
+                             alt="Sustainability" 
+                             class="w-full h-56 object-cover">
+                        <span class="absolute top-4 left-4 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                            Sustainability
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 hover:text-blue-600 transition duration-300 mb-2">
+                            Leading the way in plastic reduction and circular economy
+                        </h3>
+                        <p class="text-gray-600 text-sm">Our commitment to a sustainable future</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition duration-300 transform hover:scale-105">
+                    View all news
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT SECTION -->
+    <section class="py-16 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Pioneering change, defining the Future, Achieving Impact</h2>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    We're committed to creating a better world through sustainable business practices
+                </p>
+                <button class="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-10 py-4 rounded-full transition duration-300 transform hover:scale-105">
+                    Learn more
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREERS SECTION -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+                        Market-making, culture-creating, future-shaping. Every day.
+                    </h2>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        Join our team and help us build brands that make a real difference in people's lives around the world.
+                    </p>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition duration-300 transform hover:scale-105">
+                        Explore careers
+                    </button>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" 
+                         alt="Careers" 
+                         class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Our Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">At a glance</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Our leadership</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Innovation and R&D</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">History & Archives</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Brands</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beauty & Wellbeing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Personal Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Foods</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Sustainability</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Climate</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white
