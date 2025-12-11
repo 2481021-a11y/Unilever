@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Posts - Fetch API</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<header class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white sticky top-0 z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<a href="index.html" class="text-xl font-bold">Unilever</a>
+<nav class="hidden lg:flex gap-6">
+<a href="index.html">Home</a>
+<a href="biodata.html">Biodata</a>
+<a href="contact_us.html">Contact</a>
+<a href="posts.html" class="underline">Posts</a>
+<a href="freepage.html">Freepage</a>
+</nav>
+</div>
+</header>
+
+
+<main class="container mx-auto px-4 py-12">
+<h1 class="text-2xl font-bold mb-6">Posts (Fetched from JSONPlaceholder)</h1>
+<div id="postContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+</main>
+
+
+<footer class="bg-gray-900 text-white py-6 text-center">© 2025 Lisal Orion Djara</footer>
+
+
+<script src="scripts/posts.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Proyek Akhir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(0,100,200,0.8) 0%, rgba(0,150,255,0.6) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+        .unilever-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: white;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-600">
+                    <a href="index.html">MyWebsite</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Beranda</a></li>
+                    <li><a href="biodata.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Biodata</a></li>
+                    <li><a href="contact_us.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Contact US</a></li>
+                    <li><a href="posts.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Posts</a></li>
+                    <li><a href="freepage.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Freepage</a></li>
+                </ul>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <ul id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 pb-4">
+                <li><a href="index.html" class="block text-gray-700 hover:text-blue-600 py-2">Beranda</a></li>
+                <li><a href="biodata.html" class="block text-gray-700 hover:text-blue-600 py-2">Biodata</a></li>
+                <li><a href="contact_us.html" class="block text-gray-700 hover:text-blue-600 py-2">Hubungi Kami</a></li>
+                <li><a href="posts.html" class="block text-gray-700 hover:text-blue-600 py-2">Posts</a></li>
+                <li><a href="freepage.html" class="block text-gray-700 hover:text-blue-600 py-2">Galeri</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
+            <p class="text-xl text-blue-100">Formulir Pendaftaran Mahasiswa</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg mb-8">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div>
+                            <p class="font-bold">Berhasil!</p>
+                            <p>Data Anda telah berhasil dikirim.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+                        Formulir Pendaftaran
+                    </h2>
+
+                    <form id="registrationForm" class="space-y-6">
+                        <!-- Nama Lengkap -->
+                        <div>
+                            <label for="namaLengkap" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nama Lengkap <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="namaLengkap" name="namaLengkap" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                                   placeholder="Masukkan nama lengkap Anda">
+                            <p id="namaLengkapError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- NIM -->
+                        <div>
+                            <label for="nim" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nomor Mahasiswa (NIM) <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="nim" name="nim" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                                   placeholder="Masukkan NIM Anda">
+                            <p id="nimError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Alamat Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                                   placeholder="contoh@email.com">
+                            <p id="emailError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Fakultas/Jurusan -->
+                        <div>
+                            <label for="fakultas" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Fakultas/Jurusan <span class="text-red-500">*</span>
+                            </label>
+                            <select id="fakultas" name="fakultas" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                                <option value="">Pilih Fakultas/Jurusan</option>
+                                <option value="Fakultas Teknologi Informasi">Fakultas Teknologi Informasi</option>
+                                <option value="Fakultas Ekonomi">Fakultas Ekonomi</option>
+                                <option value="Fakultas Ilmu Pendidikan">Fakultas Ilmu Pendidikan</option>
+                                <option value="Fakultas Keperawatan">Fakultas Keperawatan</option>
+                                <option value="Fakultas Filsafat">Fakultas Filsafat</option>
+                            </select>
+                            <p id="fakultasError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Tanggal Lahir -->
+                        <div>
+                            <label for="tanggalLahir" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Tanggal Lahir <span class="text-red-500">*</span>
+                            </label>
+                            <input type="date" id="tanggalLahir" name="tanggalLahir" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300">
+                            <p id="tanggalLahirError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Jenis Kelamin -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-3">
+                                Jenis Kelamin <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex gap-6">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="jenisKelamin" value="Pria" 
+                                           class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <span class="ml-2 text-gray-700">Pria</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="jenisKelamin" value="Wanita" 
+                                           class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                                    <span class="ml-2 text-gray-700">Wanita</span>
+                                </label>
+                            </div>
+                            <p id="jenisKelaminError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Alamat -->
+                        <div>
+                            <label for="alamat" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Alamat <span class="text-red-500">*</span>
+                            </label>
+                            <textarea id="alamat" name="alamat" rows="4" 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                                      placeholder="Masukkan alamat lengkap Anda"></textarea>
+                            <p id="alamatError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Nomor Telepon -->
+                        <div>
+                            <label for="nomorTelepon" class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nomor Telepon <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" id="nomorTelepon" name="nomorTelepon" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                                   placeholder="+62 XXX XXXX XXXX">
+                            <p id="nomorTeleponError" class="text-red-500 text-sm mt-1 hidden"></p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4">
+                            <button type="submit" 
+                                    class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition duration-300 transform hover:scale-105">
+                                Kirim Pendaftaran
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Email</h3>
+                        <p class="text-gray-600">info@mywebsite.com</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Telepon</h3>
+                        <p class="text-gray-600">+62 123 4567 890</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Alamat</h3>
+                        <p class="text-gray-600">Jl. Pendidikan No. 123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Tentang</h4>
+                    <p class="text-gray-400">
+                        Website proyek akhir dibuat dengan HTML, CSS, JavaScript, dan Tailwind CSS.
+                    </p>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Link Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Beranda</a></li>
+                        <li><a href="biodata.html" class="text-gray-400 hover:text-white transition duration-300">Biodata</a></li>
+                        <li><a href="contact_us.html" class="text-gray-400 hover:text-white transition duration-300">Hubungi Kami</a></li>
+                        <li><a href="posts.html" class="text-gray-400 hover:text-white transition duration-300">Posts</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Kontak</h4>
+                    <p class="text-gray-400 mb-2">Email: info@mywebsite.com</p>
+                    <p class="text-gray-400">Phone: +62 123 4567 890</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
