@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        /* Animation CSS (dipertahankan) */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -25,10 +27,11 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
         }
 
+        /* FIX: Menambahkan warna putih agar terlihat di header biru gelap */
         .unilever-logo {
             font-family: 'Pacifico', cursive;
             font-size: 2rem;
-            color: ;
+            color: #ffffff; /* FIX: Added color */
             font-weight: 400;
             letter-spacing: 1px;
         }
@@ -37,66 +40,41 @@
             max-width: 80rem; 
         }
 
-        .hero-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .hero-video-container video {
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            object-fit: cover;
-        }
+        /* Dihapus: CSS untuk .hero-video-container karena tidak digunakan */
     </style>
 </head>
-<body class="font-sans antialiased bg-white">
+<body class="font-sans antialiased bg-white dark:bg-gray-900">
     
-    <!-- HEADER -->
-    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
-        <div class="uco-c-header__main">
-            <div class="flex items-center justify-between py-3">
-                <div class="flex flex-col md:flex-col">
-                    <!-- Logo -->
-                    <div class="flex items-center space-x-8">
-                        <a href="#" class="flex items-center">
-                            <div class="unilever-logo">Unilever</div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="index.html">Home</a> &gt; Contact
-                    </div>
-                </div>               
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg px-4 md:px-8">
+        <div class="max-w-7xl mx-auto flex items-center justify-between py-4">
+            
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="flex items-center">
+                    <div class="unilever-logo">Unilever</div>
+                </a>
+                </div>
+            
+            <div class="flex items-center">
+                <nav class="hidden lg:flex items-center space-x-6 main-nav-container">
+                    <a href="biodata.html" class="text-white hover:text-blue-300 transition duration-300 font-medium">Biodata</a>
+                    <a href="contact_us.html" class="text-white hover:text-blue-300 transition duration-300 font-medium">Contact Us</a>
+                    <a href="freepage.html" class="text-white hover:text-blue-300 transition duration-300 font-medium">Freepage</a>
+                    <a href="posts.html" class="text-white hover:text-blue-300 transition duration-300 font-medium">Posts</a>
+                    
+                    <button class="flex items-center bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 ml-6">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <span>Search</span>
+                    </button>
+                </nav>
 
-            <nav class="hidden lg:flex items-center space-x-6 main-nav-container">
-                <a href="biodata.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Biodata</a>
-                <a href="contact_us.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Contact Us</a>
-                <a href="freepage.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Freepage</a>
-                <a href="posts.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Posts</a>
-                
-                <button class="flex items-center bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 ml-6">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-blue-300 p-2">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
-                    <span>Search</span>
                 </button>
-            </nav>
-
-            <button id="mobile-menu-btn" class="lg:hidden text-gray-800 hover:text-blue-600">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+            </div>
         </div> 
 
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
@@ -117,30 +95,29 @@
 
     <main class="min-h-screen">
         <div class="max-w-6xl mx-auto px-4 py-16">
-            <h1 class="text-4xl font-bold mb-10 text-center dark:text-white">Galeri Kreatif & Hobi</h1>
+            <h1 class="text-4xl font-bold mb-10 text-center text-gray-800 dark:text-gray-100">Galeri Saya</h1>
 
             <div class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4 dark:text-white border-b pb-2">Video Inspirasi</h2>
-    
-    <div class="relative pt-[56.25%]"> 
-        <iframe
-            class="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl" 
-            
-            src="https://youtu.be/QAOMYGG7QC0?si=A78JOFrPEEbPjXr5" title="YouTube video player"  
-            
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-</div>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-200 border-b pb-2">Video Inspirasi</h2>
+                
+                <div class="relative pt-[56.25%]"> 
+                    <iframe
+                        class="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl" 
+                        src="https://www.youtube.com/embed/QAOMYGG7QC0" 
+                        title="YouTube video player"  
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
             
             <div>
-                <h2 class="text-2xl font-semibold mb-4 dark:text-white border-b pb-2">Lokasi FTI UNAI</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-gray-200 border-b pb-2">Lokasi FTI UNAI</h2>
                 <div class="relative pt-[40%]">
                     <iframe 
                         class="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl" 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.42436854125!2d107.71261537500171!3d-6.837839393160244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68ddc04b8689c7%3A0x6b77c31e9c20a45!2sFakultas%20Teknologi%20Informasi%20(FTI)%20UNAI!5e0!3m2!1sid!2sid!4v1701358899878!5m2!1sid!2sid" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8413697960334!2d107.64188591477281!3d-6.91474409278939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64c4897f223%3A0x64c8d5c4b57b9c61!2sUniversitas%20Advent%20Indonesia%20(UNAI)!5e0!3m2!1sen!2sid!4v1678893600000!5m2!1sen!2sid" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
@@ -150,7 +127,6 @@
         </div>
     </main>
 
-    <!-- FOOTER -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4 max-w-7xl-custom">
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
@@ -184,7 +160,7 @@
                     </ul>
                 </div>
                 
-                   <div class="hidden lg:block"></div>
+                <div class="hidden lg:block"></div>
 
                 <div>
                     <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Tautan Cepat</h4>
@@ -222,22 +198,32 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Fungsionalitas Modal (Pop-up)
+        /* * Fungsionalitas Modal (Pop-up)
+        * Kode ini baik, tetapi tidak ada elemen HTML yang memanggilnya (mis. tombol open modal).
+        * Saya biarkan di sini untuk fungsionalitas di masa depan.
+        */
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             document.body.style.overflow = 'hidden'; 
             // Tambahkan animasi masuk
-            modal.querySelector('div:first-child').classList.remove('scale-95');
-            modal.querySelector('div:first-child').classList.add('scale-100');
+            const modalContent = modal.querySelector('div:first-child');
+            if (modalContent) {
+                 modalContent.classList.remove('scale-95');
+                 modalContent.classList.add('scale-100');
+            }
         }
 
         function closeModal(modalId) {
             const modal = document.getElementById(modalId);
+            const modalContent = modal.querySelector('div:first-child');
+            
             // Tambahkan animasi keluar sebelum menyembunyikan
-            modal.querySelector('div:first-child').classList.remove('scale-100');
-            modal.querySelector('div:first-child').classList.add('scale-95');
+            if (modalContent) {
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            }
             
             setTimeout(() => {
                 modal.classList.add('hidden');
