@@ -1,35 +1,305 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Posts - Fetch API</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unilever Global | Beranda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .unilever-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: ;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .max-w-7xl-custom {
+            max-width: 80rem; 
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-<header class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white sticky top-0 z-50">
-<div class="container mx-auto px-4 py-3 flex items-center justify-between">
-<a href="index.html" class="text-xl font-bold">Unilever</a>
-<nav class="hidden lg:flex gap-6">
-<a href="index.html">Home</a>
-<a href="biodata.html">Biodata</a>
-<a href="contact_us.html">Contact</a>
-<a href="posts.html" class="underline">Posts</a>
-<a href="freepage.html">Freepage</a>
-</nav>
-</div>
-</header>
+<body class="font-sans antialiased bg-white">
+    
+    <!-- HEADER -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="uco-c-header__main">
+            <div class="flex items-center justify-between py-3">
+                <div class="flex flex-col md:flex-col">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-8">
+                        <a href="#" class="flex items-center">
+                            <div class="unilever-logo">Unilever</div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="index.html">Home</a> &gt; Contact
+                    </div>
+                </div>               
 
+            <nav class="hidden lg:flex items-center space-x-6 main-nav-container">
+                <a href="biodata.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Biodata</a>
+                <a href="contact_us.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Contact Us</a>
+                <a href="freepage.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Freepage</a>
+                <a href="posts.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Posts</a>
+                
+                <button class="flex items-center bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 ml-6">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <span>Search</span>
+                </button>
+            </nav>
 
-<main class="container mx-auto px-4 py-12">
-<h1 class="text-2xl font-bold mb-6">Posts (Fetched from JSONPlaceholder)</h1>
-<div id="postContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-</main>
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-800 hover:text-blue-600">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div> 
 
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <div class="flex flex-col space-y-2 px-4 py-4">
+                <a href="biodata.html" class="text-gray-800 hover:text-blue-600 py-2 border-b border-gray-100">Biodata</a>
+                <a href="contact_us.html" class="text-gray-800 hover:text-blue-600 py-2 border-b border-gray-100">Contact Us</a>
+                <a href="freepage.html" class="text-gray-800 hover:text-blue-600 py-2 border-b border-gray-100">Freepage</a>
+                <a href="posts.html" class="text-gray-800 hover:text-blue-600 py-2">Posts</a>
+                <button class="flex items-center justify-center w-full bg-blue-600 text-white font-semibold px-4 py-2 mt-4 rounded-full hover:bg-blue-700 transition duration-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <span>Search</span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-<footer class="bg-gray-900 text-white py-6 text-center">© 2025 Lisal Orion Djara</footer>
+    <!-- ======================= CONTENT ======================= -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
 
+    <h1 class="text-3xl font-bold text-[#002F54] mb-8 text-center">
+      Post Data from API
+    </h1>
 
-<script src="scripts/posts.js"></script>
+    <div id="postContainer"
+      class="bg-white shadow-md rounded-xl p-6 border border-gray-200">
+      
+      <p class="text-gray-600 text-center">Loading post...</p>
+
+    </div>
+
+  </section>
+
+  <!-- ======================= FETCH SCRIPT ======================= -->
+  <script>
+    async function loadPost() {
+
+      // GANTI XX SESUAI 2 DIGIT TERAKHIR NIM KAMU
+      let apiURL = "https://jsonplaceholder.typicode.com/posts/21";
+
+      try {
+        let response = await fetch(apiURL);
+        let data = await response.json();
+
+        document.getElementById("postContainer").innerHTML = `
+          <div class="space-y-4">
+
+            <div>
+              <h2 class="font-bold text-xl text-[#002F54]">Post ID:</h2>
+              <p class="text-gray-700">${data.id}</p>
+            </div>
+
+            <div>
+              <h2 class="font-bold text-xl text-[#002F54]">Title:</h2>
+              <p class="text-gray-700">${data.title}</p>
+            </div>
+
+            <div>
+              <h2 class="font-bold text-xl text-[#002F54]">Body:</h2>
+              <p class="text-gray-700 leading-relaxed">${data.body}</p>
+            </div>
+
+          </div>
+        `;
+      } 
+      catch (err) {
+        document.getElementById("postContainer").innerHTML = `
+          <p class="text-red-600 text-center">Error loading post data.</p>
+        `;
+      }
+    }
+
+    loadPost();
+
+    // MOBILE MENU TOGGLE SCRIPT
+    const btn = document.getElementById("menu-btn");
+    const nav = document.getElementById("nav-menu");
+
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("hidden");
+    });
+  </script> 
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 max-w-7xl-custom">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Perusahaan Kami</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Sekilas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Kepemimpinan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Inovasi & R&D</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Sejarah & Arsip</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Merek</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beauty & Wellbeing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Personal Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Foods & Refreshment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Keberlanjutan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Iklim</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Alam</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plastik</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Kesejahteraan Sosial</a></li>
+                    </ul>
+                </div>
+                
+                   <div class="hidden lg:block"></div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="biodata.html" class="text-gray-400 hover:text-white transition duration-300">Biodata</a></li>
+                        <li><a href="contact_us.html" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a></li>
+                        <li><a href="freepage.html" class="text-gray-400 hover:text-white transition duration-300">Freepage</a></li>
+                        <li><a href="posts.html" class="text-gray-400 hover:text-white transition duration-300">Posts</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center sm:text-left">
+                <a href="index.html" class="flex items-center justify-center sm:justify-start mb-4">
+                    <div class="unilever-logo text-white">Unilever</div> </a>
+                <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                    <div class="flex flex-wrap justify-center sm:justify-start space-x-4 mb-4 sm:mb-0 text-gray-400">
+                        <a href="#" class="hover:text-white">Pemberitahuan Hukum</a>
+                        <a href="#" class="hover:text-white">Kebijakan Privasi</a>
+                        <a href="#" class="hover:text-white">Peta Situs</a>
+                        <a href="#" class="hover:text-white">Aksesibilitas</a>
+                    </div>
+                    <p class="text-gray-400">© 2025 Unilever. All rights reserved. | <span class="text-gray-500 text-xs">Desain oleh Lisal Orion Djara</span></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fungsionalitas Modal (Pop-up)
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; 
+            // Tambahkan animasi masuk
+            modal.querySelector('div:first-child').classList.remove('scale-95');
+            modal.querySelector('div:first-child').classList.add('scale-100');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            // Tambahkan animasi keluar sebelum menyembunyikan
+            modal.querySelector('div:first-child').classList.remove('scale-100');
+            modal.querySelector('div:first-child').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = ''; 
+            }, 300); 
+        }
+
+        // Tutup modal jika mengklik di luar konten modal
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('bg-opacity-50')) {
+                const modals = document.querySelectorAll('.fixed.inset-0.bg-black.bg-opacity-50');
+                modals.forEach(modal => {
+                    if (modal.classList.contains('flex')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+
+        // Tutup modal jika menekan tombol ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modals = document.querySelectorAll('.fixed.inset-0.bg-black.bg-opacity-50');
+                modals.forEach(modal => {
+                    if (modal.classList.contains('flex')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

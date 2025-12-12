@@ -1,335 +1,274 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri - Proyek Akhir</title>
+    <title>Unilever Global | Beranda</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-gray-50">
-    <!-- Header/Navigation -->
-    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-3">
-                <!-- Logo -->
-                <div class="flex items-center space-x-8">
-                    <a href="#" class="flex items-center">
-                        <div class="unilever-logo">Unilever</div>
-                    </a>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-4">
-                    <div>
-                            <a href="biodata.html" class="hover:text-blue-300 flex items-center transition duration-300">
-                                Biodata
-                                <svg class="w-4 h-4 ml-1" viewBox="0 0 20 20">
-                                </svg>
-                            </a>
-                        </div>
-                        
-                        <div class="relative dropdown group">
-                            <a href="contact_us.html" class="hover:text-blue-300 flex items-center transition duration-300">
-                                Contact Us
-                                <svg class="w-4 h-4 ml-1" viewBox="0 0 20 20">
-                                </svg>
-                            </a>
-                        </div>
-                        
-                        <div class="relative dropdown group">
-                            <a href="freepage.html" class="hover:text-blue-300 flex items-center transition duration-300">
-                                Freepage
-                                <svg class="w-4 h-4 ml-1" viewBox="0 0 20 20">
-                                </svg>
-                            </a>
-                        </div>
-                        
-                        <div class="relative dropdown group">
-                            <a href="posts.html" class="hover:text-blue-300 flex items-center transition duration-300">
-                                Posts
-                                <svg class="w-4 h-4 ml-1" viewBox="0 0 20 20">
-                                </svg>
-                            </a>
-                        </div>
-                    <button class="hover:text-blue-300 transition duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                        </svg>
-                    </button>
-                        
-                    <button class="hover:text-blue-300 transition duration-300 text-sm">🌎 Global</button>
-                </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
 
-                <div class="breadcrumb">
-                    <a href="index.html">Home</a> &gt; Contact
-                </div>
-            
-            <!-- Mobile Menu -->
-            <ul id="mobileMenu" class="hidden md:hidden mt-4 space-y-2 pb-4">
-                <li><a href="index.html" class="block text-gray-700 hover:text-blue-600 py-2">Home</a></li>
-                <li><a href="biodata.html" class="block text-gray-700 hover:text-blue-600 py-2">Biodata</a></li>
-                <li><a href="contact_us.html" class="block text-gray-700 hover:text-blue-600 py-2">Hubungi Kami</a></li>
-                <li><a href="posts.html" class="block text-gray-700 hover:text-blue-600 py-2">Posts</a></li>
-                <li><a href="freepage.html" class="block text-gray-700 hover:text-blue-600 py-2">Galeri</a></li>
-            </ul>
-        </nav>
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .unilever-logo {
+            font-family: 'Pacifico', cursive;
+            font-size: 2rem;
+            color: ;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .max-w-7xl-custom {
+            max-width: 80rem; 
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .hero-video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white">
+    
+    <!-- HEADER -->
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg">
+        <div class="uco-c-header__main">
+            <div class="flex items-center justify-between py-3">
+                <div class="flex flex-col md:flex-col">
+                    <!-- Logo -->
+                    <div class="flex items-center space-x-8">
+                        <a href="#" class="flex items-center">
+                            <div class="unilever-logo">Unilever</div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="index.html">Home</a> &gt; Contact
+                    </div>
+                </div>               
+
+            <nav class="hidden lg:flex items-center space-x-6 main-nav-container">
+                <a href="biodata.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Biodata</a>
+                <a href="contact_us.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Contact Us</a>
+                <a href="freepage.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Freepage</a>
+                <a href="posts.html" class="text-gray-800 hover:text-blue-600 transition duration-300 font-medium">Posts</a>
+                
+                <button class="flex items-center bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 ml-6">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <span>Search</span>
+                </button>
+            </nav>
+
+            <button id="mobile-menu-btn" class="lg:hidden text-gray-800 hover:text-blue-600">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div> 
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+            <div class="flex flex-col space-y-2 px-4 py-4">
+                <a href="biodata.html" class="text-gray-800 hover:text-blue-600 py-2 border-b border-gray-100">Biodata</a>
+                <a href="contact_us.html" class="text-gray-800 hover:text-blue-600 py-2 border-b border-gray-100">Contact Us</a>
+                <a href="freepage.html" class="text-gray-800 hover:text-blue-600 py-2 border-b border-gray-100">Freepage</a>
+                <a href="posts.html" class="text-gray-800 hover:text-blue-600 py-2">Posts</a>
+                <button class="flex items-center justify-center w-full bg-blue-600 text-white font-semibold px-4 py-2 mt-4 rounded-full hover:bg-blue-700 transition duration-300">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <span>Search</span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Galeri Proyek</h1>
-            <p class="text-xl text-blue-100">Showcase kreativitas dan portofolio mini</p>
-        </div>
-    </section>
+    <main class="min-h-screen">
+        <div class="max-w-6xl mx-auto px-4 py-16">
+            <h1 class="text-4xl font-bold mb-10 text-center dark:text-white">Galeri Kreatif & Hobi</h1>
 
-    <!-- Gallery Content -->
-    <section class="py-16 md:py-24">
-        <div class="container mx-auto px-4">
-            <!-- Introduction -->
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                    Portfolio Mini Saya
-                </h2>
-                <p class="text-gray-600 text-lg">
-                    Berikut adalah beberapa proyek dan karya yang telah saya buat selama perjalanan belajar web development
-                </p>
-            </div>
-
-            <!-- Gallery Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Website Responsif</h3>
-                        <p class="text-gray-600 mb-4">
-                            Proyek website multi-halaman dengan desain responsif menggunakan Tailwind CSS
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">HTML</span>
-                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">CSS</span>
-                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">JavaScript Interaktif</h3>
-                        <p class="text-gray-600 mb-4">
-                            Implementasi validasi form dan fetching data dari API eksternal
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">API</span>
-                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Fetch</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">UI/UX Design</h3>
-                        <p class="text-gray-600 mb-4">
-                            Desain antarmuka yang modern dan user-friendly dengan animasi smooth
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Design</span>
-                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">UX</span>
-                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Animation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Data Management</h3>
-                        <p class="text-gray-600 mb-4">
-                            Pengelolaan dan display data dinamis dari berbagai sumber API
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">JSON</span>
-                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">REST API</span>
-                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm">Data</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Form Validation</h3>
-                        <p class="text-gray-600 mb-4">
-                            Sistem validasi form yang komprehensif dengan feedback real-time
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">Validation</span>
-                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">Security</span>
-                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">UX</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
-                        <svg class="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Deployment</h3>
-                        <p class="text-gray-600 mb-4">
-                            Deployment website ke platform modern dengan custom domain
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Vercel</span>
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">GitHub</span>
-                            <span class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm">Domain</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Skills Timeline -->
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">
-                    Perjalanan Belajar
-                </h2>
-                
-                <div class="space-y-8">
-                    <!-- Timeline Item 1 -->
-                    <div class="flex gap-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
-                            <div class="w-1 h-full bg-blue-200 mt-2"></div>
-                        </div>
-                        <div class="flex-1 pb-8">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">HTML & CSS Fundamentals</h3>
-                            <p class="text-gray-600">
-                                Mempelajari dasar-dasar HTML5 dan CSS3, termasuk semantic markup, flexbox, dan grid layout.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 2 -->
-                    <div class="flex gap-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">2</div>
-                            <div class="w-1 h-full bg-blue-200 mt-2"></div>
-                        </div>
-                        <div class="flex-1 pb-8">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">JavaScript & DOM Manipulation</h3>
-                            <p class="text-gray-600">
-                                Menguasai JavaScript ES6+, event handling, dan manipulasi DOM untuk membuat website interaktif.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 3 -->
-                    <div class="flex gap-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
-                            <div class="w-1 h-full bg-blue-200 mt-2"></div>
-                        </div>
-                        <div class="flex-1 pb-8">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Tailwind CSS Framework</h3>
-                            <p class="text-gray-600">
-                                Implementasi utility-first CSS framework untuk development yang lebih cepat dan konsisten.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 4 -->
-                    <div class="flex gap-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">4</div>
-                        </div>
-                        <div class="flex-1">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Modern Web Development</h3>
-                            <p class="text-gray-600">
-                                Menggabungkan semua skill untuk membuat website modern, responsif, dan siap production.
-                            </p>
-                        </div>
-                    </div>
+            <div class="mb-12">
+    <h2 class="text-2xl font-semibold mb-4 dark:text-white border-b pb-2">Video Inspirasi</h2>
+    
+    <div class="relative pt-[56.25%]"> 
+        <iframe
+            class="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl" 
+            
+            src="https://youtu.be/QAOMYGG7QC0?si=A78JOFrPEEbPjXr5" title="YouTube video player"  
+            
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+            
+            <div>
+                <h2 class="text-2xl font-semibold mb-4 dark:text-white border-b pb-2">Lokasi FTI UNAI</h2>
+                <div class="relative pt-[40%]">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full rounded-lg shadow-xl" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.42436854125!2d107.71261537500171!3d-6.837839393160244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68ddc04b8689c7%3A0x6b77c31e9c20a45!2sFakultas%20Teknologi%20Informasi%20(FTI)%20UNAI!5e0!3m2!1sid!2sid!4v1701358899878!5m2!1sid!2sid" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <!-- About -->
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 max-w-7xl-custom">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
                 <div>
-                    <h4 class="text-xl font-bold mb-4">Tentang</h4>
-                    <p class="text-gray-400">
-                        Website proyek akhir dibuat dengan HTML, CSS, JavaScript, dan Tailwind CSS.
-                    </p>
-                </div>
-                
-                <!-- Links -->
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Link Cepat</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Beranda</a></li>
-                        <li><a href="biodata.html" class="text-gray-400 hover:text-white transition duration-300">Biodata</a></li>
-                        <li><a href="contact_us.html" class="text-gray-400 hover:text-white transition duration-300">Hubungi Kami</a></li>
-                        <li><a href="posts.html" class="text-gray-400 hover:text-white transition duration-300">Posts</a></li>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Perusahaan Kami</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Sekilas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Kepemimpinan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Inovasi & R&D</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Sejarah & Arsip</a></li>
                     </ul>
                 </div>
                 
-                <!-- Contact -->
                 <div>
-                    <h4 class="text-xl font-bold mb-4">Kontak</h4>
-                    <p class="text-gray-400 mb-2">Email: info@mywebsite.com</p>
-                    <p class="text-gray-400">Phone: +62 123 4567 890</p>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Merek</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Beauty & Wellbeing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Personal Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Foods & Refreshment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Keberlanjutan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Iklim</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Alam</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Plastik</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Kesejahteraan Sosial</a></li>
+                    </ul>
+                </div>
+                
+                   <div class="hidden lg:block"></div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-blue-700 pb-2">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="biodata.html" class="text-gray-400 hover:text-white transition duration-300">Biodata</a></li>
+                        <li><a href="contact_us.html" class="text-gray-400 hover:text-white transition duration-300">Contact Us</a></li>
+                        <li><a href="freepage.html" class="text-gray-400 hover:text-white transition duration-300">Freepage</a></li>
+                        <li><a href="posts.html" class="text-gray-400 hover:text-white transition duration-300">Posts</a></li>
+                    </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+
+            <div class="border-t border-gray-800 pt-8 text-center sm:text-left">
+                <a href="index.html" class="flex items-center justify-center sm:justify-start mb-4">
+                    <div class="unilever-logo text-white">Unilever</div> </a>
+                <div class="flex flex-col sm:flex-row justify-between items-center text-sm">
+                    <div class="flex flex-wrap justify-center sm:justify-start space-x-4 mb-4 sm:mb-0 text-gray-400">
+                        <a href="#" class="hover:text-white">Pemberitahuan Hukum</a>
+                        <a href="#" class="hover:text-white">Kebijakan Privasi</a>
+                        <a href="#" class="hover:text-white">Peta Situs</a>
+                        <a href="#" class="hover:text-white">Aksesibilitas</a>
+                    </div>
+                    <p class="text-gray-400">© 2025 Unilever. All rights reserved. | <span class="text-gray-500 text-xs">Desain oleh Lisal Orion Djara</span></p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Toggle Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fungsionalitas Modal (Pop-up)
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; 
+            // Tambahkan animasi masuk
+            modal.querySelector('div:first-child').classList.remove('scale-95');
+            modal.querySelector('div:first-child').classList.add('scale-100');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            // Tambahkan animasi keluar sebelum menyembunyikan
+            modal.querySelector('div:first-child').classList.remove('scale-100');
+            modal.querySelector('div:first-child').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = ''; 
+            }, 300); 
+        }
+
+        // Tutup modal jika mengklik di luar konten modal
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('bg-opacity-50')) {
+                const modals = document.querySelectorAll('.fixed.inset-0.bg-black.bg-opacity-50');
+                modals.forEach(modal => {
+                    if (modal.classList.contains('flex')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+
+        // Tutup modal jika menekan tombol ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modals = document.querySelectorAll('.fixed.inset-0.bg-black.bg-opacity-50');
+                modals.forEach(modal => {
+                    if (modal.classList.contains('flex')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
